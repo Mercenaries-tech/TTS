@@ -229,6 +229,22 @@ _abbreviations = {
             # Korean doesn't typically use abbreviations in the same way as Latin-based scripts.
         ]
     ],
+    "vi": [
+        (re.compile("\\b%s\\." % x[0], re.IGNORECASE), x[1])
+        for x in [
+            ("cô", "cô"),  # Mrs.
+            ("ông", "ông"),  # Mr.
+            ("bs", "bác sĩ"),  # doctor
+            ("th.s", "thạc sĩ"),  # master's degree
+            ("kts", "kiến trúc sư"),  # architect
+            ("ts", "tiến sĩ"),  # doctorate
+            ("tt", "thạc sĩ tiến sĩ"),  # PhD
+            ("cn", "cử nhân"),  # bachelor's degree
+            ("ks", "kỹ sư"),  # engineer
+            ("thạc sĩ", "thạc sĩ"),  # master's degree
+            ("tiến sĩ", "tiến sĩ"),  # doctorate
+        ]
+    ],
 }
 
 
@@ -425,6 +441,19 @@ _symbols_multilingual = {
             ("°", " 도 "),
         ]
     ],
+     "vi": [
+        # Korean
+        (re.compile(r"%s" % re.escape(x[0]), re.IGNORECASE), x[1])
+        for x in [
+            ("&", " và "),
+            ("@", " tại "),
+            ("%", " phần trăm "),
+            ("#", " số "),
+            ("$", " đô la "),
+            ("£", " bảng Anh "),
+            ("°", " độ "),
+        ]
+    ],
 }
 
 
@@ -502,6 +531,7 @@ def _expand_currency(m, lang="en", currency="USD"):
         "tr": ", ",
         "hu": ", ",
         "ko": ", ",
+        "vi": ", ",
     }
 
     if amount.is_integer():
