@@ -173,7 +173,7 @@ if __name__ == "__main__":
             )
             lang = gr.Dropdown(
                 label="Dataset Language",
-                value="en",
+                value="vi",
                 choices=[
                     "en",
                     "es",
