@@ -450,6 +450,7 @@ _ordinal_re = {
     "tr": re.compile(r"([0-9]+)(\.|inci|nci|uncu|üncü|\.)"),
     "hu": re.compile(r"([0-9]+)(\.|adik|edik|odik|edik|ödik|ödike|ik)"),
     "ko": re.compile(r"([0-9]+)(번째|번|차|째)"),
+    "vi": re.compile(r"thứ\s?(mười|một|hai|ba|bốn|năm|sáu|bảy|tám|chín)(\smươi\s?(một|hai|ba|bốn|năm|sáu|bảy|tám|chín)?)?")
 }
 _number_re = re.compile(r"[0-9]+")
 _currency_re = {
